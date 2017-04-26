@@ -1,0 +1,160 @@
+body {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	min-height: 98vh;
+	/* flexbox */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  background: linear-gradient(#2598CE, #28306A);
+     }
+
+main {
+	/* flexbox */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	/*align-items: center;*/
+	flex-grow: 1;
+	align-self: stretch;
+}
+
+div.upperPart{
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 20px;
+}
+
+div#header{
+  display: flex;
+  flex-direction: row;
+}
+
+.searchBox{
+  margin-left: auto;
+}
+
+input{
+  height: 20px;
+  width: 120px;
+  border-radius: 20px;
+  margin-bottom: 3px;
+  border: none;
+  font-size: 14px;
+  background-color: #C1D8EE;
+}
+
+button#summit{
+  float: right;
+  border-radius: 10px;
+  width: 60px;
+  background-color: #00B9F1;
+  border: none;
+}
+
+div#todayWeather{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+#range {
+	margin: 10px;
+	padding: 10px;
+  border-width: 5px;
+  border-color: grey;
+  border-style: solid;
+  overflow: hidden;   /* let stepper disappear off end */
+	/* flexbox */
+	display: flex;
+	flex-direction: row;
+	align-self: stretch;  /* fat as window! */
+}
+
+.stepper {
+	height: 200px;
+	width: 20%;
+  /*margin-left: 5px;*/
+	/* flexbox */
+	display: flex;
+	position: relative;  /* allow offsets from where flexbox put it */
+	/* horizontal position will be controlled by Javascript */
+  flex-shrink: 0;
+  /*justify-content: space-around;*/
+  /*transition-property: left;
+  transition-duration: 1s;*/
+}
+
+.forecast {
+	margin: 10px;
+	color: white;
+  width: 95%;
+	/* flexbox */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+  text-align: center;
+  background-color: #2B87BD;
+
+}
+
+div#arrows{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+button#rightArrow{
+  background-image: url("../WeatherApp/arrow-right.png");
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  /*float: right;
+  font-size: 20px;
+  color: white;*/
+}
+
+#leftArrow{
+  background-image: url("../WeatherApp/arrow-left.png");
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  /*font-size: 20px;
+  color: white;*/
+}
+
+.leftRight{
+  text-align: center;
+}
+
+img{
+  width: auto;
+  height: auto;
+}
+
+/*for mobile size */
+@media (max-width: 500px){
+
+  span#date,#weaImgToday,button#summit {
+    display: none;
+  }
+
+  #tempNow,#todayText,p#otherSta{
+    display: none;
+  }
+
+  div#arrows{
+    display: none;
+  }
+
+  .forecast{
+    display: none;
+  }
+
+  #showOnMobile{
+    display: block;
+  }
+}
