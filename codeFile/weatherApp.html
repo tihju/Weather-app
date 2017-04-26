@@ -16,7 +16,7 @@ Also requires files:
 	<link rel="stylesheet" type="text/css" href="weather.css">
 </head>
 
-<body>
+<body onresize="init()">
 	<!--onresize="init()"-->
 <main>
 	<div class="upperPart">
@@ -31,7 +31,7 @@ Also requires files:
 		</div>
 
 		<div id="todayWeather">
-			<img id="weaImgToday" src="../WeatherApp/" alt="can't find photo"/>
+			<img id="weaImgToday" class="resizeImg" src="../WeatherApp/" alt="can't find photo"/>
 			<p id="mainSta"><span id="location">location</span>
 				<br/><span id="tempNow">temperlature</span>
 				<br/><span id="todayText">weather</span>
@@ -48,7 +48,7 @@ Also requires files:
    <div class="stepper">
       <div class="forecast" id="showOnMobile">
          <p><span id="date1">Date</span>
-         <br/><img id="forecaseImg1" src="../WeatherApp/" alt="no image1"/>
+         <br/><img class="resizeImg" id="forecaseImg1" src="../WeatherApp/" alt="no image1"/>
          <br/><span id="text1">Date</span>
 				 <br/><span id="temp1">low high</span>
          </p>
@@ -58,7 +58,7 @@ Also requires files:
 		<div class="stepper">
 			<div class="forecast">
 				 <p><span id="date2">Date</span>
-				 <br/><img id="forecaseImg2" src="../WeatherApp/" alt="no image2"/>
+				 <br/><img class="resizeImg" id="forecaseImg2" src="../WeatherApp/" alt="no image2"/>
 				 <br/><span id="text2">Date</span>
 				 <br/><span id="temp2">low high</span>
 				 </p>
@@ -68,7 +68,7 @@ Also requires files:
 		<div class="stepper">
 			<div class="forecast">
 				 <p><span id="date3">Date</span>
-					<br/><img id="forecaseImg3" src="../WeatherApp/" alt="no image3"/>
+					<br/><img class="resizeImg" id="forecaseImg3" src="../WeatherApp/" alt="no image3"/>
 				 <br/><span id="text3">Date</span>
 				 <br/><span id="temp3">low high</span>
 				 </p>
@@ -78,7 +78,7 @@ Also requires files:
 		<div class="stepper">
 			<div class="forecast">
 				 <p><span id="date4">Date</span>
-					<br/><img id="forecaseImg4" src="../WeatherApp/" alt="no image4"/>
+					<br/><img class="resizeImg" id="forecaseImg4" src="../WeatherApp/" alt="no image4"/>
 				 <br/><span id="text4">Date</span>
 				 <br/><span id="temp4">low high</span>
 				 </p>
@@ -88,7 +88,7 @@ Also requires files:
 		<div class="stepper">
 			<div class="forecast">
 				 <p><span id="date5">Date</span>
-				 <br/><img id="forecaseImg5" src="../WeatherApp/" alt="no image5"/>
+				 <br/><img class="resizeImg" id="forecaseImg5" src="../WeatherApp/" alt="no image5"/>
 				 <br/><span id="text5">Date</span>
 				 <br/><span id="temp5">low high</span>
 				 </p>
@@ -97,10 +97,10 @@ Also requires files:
 
 		<div class="stepper">
 			<div class="forecast">
-				 <p><span id="date6">Date</span>
-				 <br/><img id="forecaseImg6" src="../WeatherApp/" alt="no image6"/>
-				 <br/><span id="text6">Date</span>
-				 <br/><span id="temp6">low high</span>
+				 <p><span id="date6">Date</span></p>
+				 <img class="resizeImg" id="forecaseImg6" src="../WeatherApp/" alt="no image6"/>
+				 <p><span id="text6">Date</span></p>
+				 <p><span id="temp6">low high</span>
 				 </p>
 			</div>
 		</div>
@@ -108,7 +108,7 @@ Also requires files:
 		<div class="stepper">
 			<div class="forecast">
 				 <p><span id="date7">Date</span>
-				 <br/><img id="forecaseImg7" src="../WeatherApp/" alt="no image7"/>
+				 <br/><img class="resizeImg" id="forecaseImg7" src="../WeatherApp/" alt="no image7"/>
 				 <br/><span id="text7">Date</span>
 				 <br/><span id="temp7">low high</span>
 				 </p>
@@ -118,7 +118,7 @@ Also requires files:
 		<div class="stepper">
 			<div class="forecast">
 				 <p><span id="date8">Date</span>
-				 <br/><img id="forecaseImg8" src="../WeatherApp/" alt="no image8"/>
+				 <br/><img class="resizeImg" id="forecaseImg8" src="../WeatherApp/" alt="no image8"/>
 				 <br/><span id="text8">Date</span>
 				 <br/><span id="temp8">low high</span>
 				 </p>
@@ -128,7 +128,7 @@ Also requires files:
 		<div class="stepper">
 			<div class="forecast">
 				 <p><span id="date9">Date</span>
-				 <br/><img id="forecaseImg9" src="../WeatherApp/" alt="no image9"/>
+				 <br/><img class="resizeImg" id="forecaseImg9" src="../WeatherApp/" alt="no image9"/>
 				 <br/><span id="text9">Date</span>
 				 <br/><span id="temp9">low high</span>
 				 </p>
@@ -137,11 +137,10 @@ Also requires files:
 
 		<div class="stepper">
 			<div class="forecast">
-					 <p><span id="date10">Date</span>
-					 <br/><img id="forecaseImg10" src="../WeatherApp/" alt="no image10"/>
-					 <br/><span id="text10">Date</span>
-					 <br/><span id="temp10">Date</span>
-					 </p>
+					 <p><span id="date10">Date</span> </p>
+					 <img class="resizeImg" id="forecaseImg10" src="../WeatherApp/" alt="no image10"/>
+					 <p><span id="text10">Date</span></p>
+					 <p><span id="temp10">Date</span></p>
 			</div>
 		</div>
 </div>

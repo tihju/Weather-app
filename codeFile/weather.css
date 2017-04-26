@@ -75,9 +75,10 @@ div#todayWeather{
 }
 
 .stepper {
-	height: 200px;
-	width: 20%;
-  /*margin-left: 5px;*/
+	/*height: 200px;*/
+	/*width: 230px;
+  margin-left: 5px;
+  margin-right: 5px;*/
 	/* flexbox */
 	display: flex;
 	position: relative;  /* allow offsets from where flexbox put it */
@@ -89,14 +90,16 @@ div#todayWeather{
 }
 
 .forecast {
-	margin: 10px;
+	/*padding-right: 50px;
+  padding-left: 50px;*/
 	color: white;
-  width: 95%;
+  /*width: 95%;*/
 	/* flexbox */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
   text-align: center;
+  align-items: center;
   background-color: #2B87BD;
 
 }
@@ -129,6 +132,11 @@ button#rightArrow{
 .leftRight{
   text-align: center;
 }
+
+/*img.resizeImg{
+  width: 70px;
+  height: 70px;
+}*/
 
 img{
   width: auto;

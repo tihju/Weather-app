@@ -4,18 +4,23 @@ var left = 0;
 //track of what is on the screen, sopposed
 leftImage = 1;
 rightImage = 10;
+init();
 
+function init(){
+	var range = document.getElementById("range");
+	var rangeWidth = range.clientWidth;
+	var steppers = document.getElementsByClassName("stepper");
+	var n = steppers.length;
 
-// function init(){
-// 	var range = document.getElementById("range");
-// 	var rangeWidth = range.clientWidth;
-// 	var steppers = document.getElementsByClassName("stepper");
-// 	var n = steppers.length;
-// 	for(i = 0; i < n; i++){
-// 		steppers[i].style.width = rangeWidth / 5 + "px";
-// 		console.log(steppers[i].style.width);
-// 	}
-// }
+	var totalMargin = rangeWidth - 5 * steppers[0].clientWidth;
+
+	var margin = totalMargin / 4;
+	for(i = 0; i < n; i++){
+		// steppers[i].style.width = rangeWidth / 5 + "px";
+		// console.log(steppers[i].style.width);
+		steppers[i].style.left = margin * i + "px";
+	}
+}
 
 /* called when new weather arrives */
 function callbackFunction(data) {
@@ -151,24 +156,15 @@ function previousForcast(){
 	// console.log("previusForcast" + left);
 	var range = document.getElementById("range");
 	var rangeWidth = range.clientWidth;
-	// var move = rangeWidth * 0.21;
-	// console.log("previousForcast" + rangeWidth);
 
 	var steppy = document.getElementsByClassName("stepper");
 	var n = steppy.length;
 	// left = left + move;
 
 	for(i = 0; i < n; i ++){
-		// var widthI = steppy[i].innerWidth();
-		// console.log("innerWidth " + widthI);
-
-		// left = left + move;
-		left = left + 15;
-		// console.log("previusForcast" + left);
+		left = left + steppy[i].clientWidth;
 		steppy[i].style.left = left +"px";
-		// console.log(i);
 	}
-	// console.log("previusForcast" + left);
 	leftImage--;
 	rightImage--;
 }
@@ -179,19 +175,14 @@ function moreForcast(){
 	// console.log("moreForcast" + left);
 	var range2 = document.getElementById("range");
 	var rangeWidth2 = range2.clientWidth;
-	console.log("moreForcast: " + rangeWidth2);
-
-	// var move = rangeWidth2 * 0.2;
-	// console.log("moreForcast 20%: " + move);
 
 	var steppy2 = document.getElementsByClassName("stepper");
 
 	var n = steppy2.length;
 
 	for(i = 0; i < n; i ++){
-		// var widthI2 = steppy2[i].offsetWidth;
 
-		left = left - 15;
+		left = left - steppy2[i].clientWidth;
 		//left = left - move;
 		steppy2[i].style.left = left +"px";
 	}
