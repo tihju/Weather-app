@@ -190,7 +190,7 @@ function moreForcast(){
 
 	for(i = 0; i < n; i ++){
 		// var widthI2 = steppy2[i].offsetWidth;
-		
+
 		left = left - 15;
 		//left = left - move;
 		steppy2[i].style.left = left +"px";
