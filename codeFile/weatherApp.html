@@ -1,0 +1,162 @@
+<!doctype HTML>
+<!--
+Beginning of Weather App
+
+Also requires files:
+	weather.css
+	weather.js
+-->
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Weather App</title>
+	<!-- <link rel="stylesheet" type="text/css" href="reset.css"> -->
+	<link rel="stylesheet" type="text/css" href="weather.css">
+</head>
+
+<body>
+	<!--onresize="init()"-->
+<main>
+	<div class="upperPart">
+		<div id="header">
+			<p>Today <span id="time">time</span>
+			<br/><span id="date">Date</span>
+			</p>
+			<p class="searchBox">
+				<input id="zipbox" type="text" placeholder="enter zip"/>
+				<br/><button id="summit" onclick="gotNewPlace()">summit</button>
+			</p>
+		</div>
+
+		<div id="todayWeather">
+			<img id="weaImgToday" src="../WeatherApp/" alt="can't find photo"/>
+			<p id="mainSta"><span id="location">location</span>
+				<br/><span id="tempNow">temperlature</span>
+				<br/><span id="todayText">weather</span>
+			</p>
+			<p id="otherSta"><img src="../WeatherApp/drop.png" alt="no imgae"/>
+				<span id="humiNow">humitiry</span>
+				<br/><img src="../WeatherApp/wind.png" alt="no imgae"/>
+				<span id="windNow">wind</span>
+			</p>
+		</div>
+	</div>
+
+<div id="range">
+   <div class="stepper">
+      <div class="forecast" id="showOnMobile">
+         <p><span id="date1">Date</span>
+         <br/><img id="forecaseImg1" src="../WeatherApp/" alt="no image1"/>
+         <br/><span id="text1">Date</span>
+				 <br/><span id="temp1">low high</span>
+         </p>
+      </div>
+		</div>
+
+		<div class="stepper">
+			<div class="forecast">
+				 <p><span id="date2">Date</span>
+				 <br/><img id="forecaseImg2" src="../WeatherApp/" alt="no image2"/>
+				 <br/><span id="text2">Date</span>
+				 <br/><span id="temp2">low high</span>
+				 </p>
+			</div>
+		</div>
+
+		<div class="stepper">
+			<div class="forecast">
+				 <p><span id="date3">Date</span>
+					<br/><img id="forecaseImg3" src="../WeatherApp/" alt="no image3"/>
+				 <br/><span id="text3">Date</span>
+				 <br/><span id="temp3">low high</span>
+				 </p>
+			</div>
+		</div>
+
+		<div class="stepper">
+			<div class="forecast">
+				 <p><span id="date4">Date</span>
+					<br/><img id="forecaseImg4" src="../WeatherApp/" alt="no image4"/>
+				 <br/><span id="text4">Date</span>
+				 <br/><span id="temp4">low high</span>
+				 </p>
+			</div>
+		</div>
+
+		<div class="stepper">
+			<div class="forecast">
+				 <p><span id="date5">Date</span>
+				 <br/><img id="forecaseImg5" src="../WeatherApp/" alt="no image5"/>
+				 <br/><span id="text5">Date</span>
+				 <br/><span id="temp5">low high</span>
+				 </p>
+			</div>
+		</div>
+
+		<div class="stepper">
+			<div class="forecast">
+				 <p><span id="date6">Date</span>
+				 <br/><img id="forecaseImg6" src="../WeatherApp/" alt="no image6"/>
+				 <br/><span id="text6">Date</span>
+				 <br/><span id="temp6">low high</span>
+				 </p>
+			</div>
+		</div>
+
+		<div class="stepper">
+			<div class="forecast">
+				 <p><span id="date7">Date</span>
+				 <br/><img id="forecaseImg7" src="../WeatherApp/" alt="no image7"/>
+				 <br/><span id="text7">Date</span>
+				 <br/><span id="temp7">low high</span>
+				 </p>
+			</div>
+		</div>
+
+		<div class="stepper">
+			<div class="forecast">
+				 <p><span id="date8">Date</span>
+				 <br/><img id="forecaseImg8" src="../WeatherApp/" alt="no image8"/>
+				 <br/><span id="text8">Date</span>
+				 <br/><span id="temp8">low high</span>
+				 </p>
+			</div>
+		</div>
+
+		<div class="stepper">
+			<div class="forecast">
+				 <p><span id="date9">Date</span>
+				 <br/><img id="forecaseImg9" src="../WeatherApp/" alt="no image9"/>
+				 <br/><span id="text9">Date</span>
+				 <br/><span id="temp9">low high</span>
+				 </p>
+			</div>
+		</div>
+
+		<div class="stepper">
+			<div class="forecast">
+					 <p><span id="date10">Date</span>
+					 <br/><img id="forecaseImg10" src="../WeatherApp/" alt="no image10"/>
+					 <br/><span id="text10">Date</span>
+					 <br/><span id="temp10">Date</span>
+					 </p>
+			</div>
+		</div>
+</div>
+
+<div id="arrows">
+	<span class="leftRight"><button onclick="previousForcast()" id="leftArrow"> </button>previous forecasts</span>
+		<span class="leftRight">more forecasts<button onclick="moreForcast()" id="rightArrow"> </button>
+</div>
+
+</main>
+<a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img src="https://poweredby.yahoo.com/purple.png" width="134" height="29"/> </a>
+<!-- contains callback function that is called when weather gets here from server -->
+<script src="weather.js"></script>
+
+
+<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='davis, ca')&format=json&callback=callbackFunction"></script>
+</body>
+</html>
