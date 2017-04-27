@@ -126,6 +126,10 @@ div#todayWeather{
 
 }
 
+div#forMobile{
+  display:none;
+}
+
 div#arrows{
   display: flex;
   flex-direction: row;
@@ -140,6 +144,7 @@ button#rightArrow{
   width: 40px;
   height: 40px;
   background-size: cover;
+  /*margin-right: auto;*/
 }
 
 #leftArrow{
@@ -155,10 +160,14 @@ button#rightArrow{
   text-align: center;
 }
 
+#weaImgToday{
+  max-width: 300px;
+  max-height: 200px;
+}
+
 img{
   width: auto;
   height: auto;
-  /*max-width: 75px;*/
 }
 
 /*for mobile size */
@@ -180,25 +189,28 @@ img{
     display: none;
   }
 
-  div#header{
-    display: flex;
-    flex-direction: column-reverse;
-    /*justify-content: flex-start;
-    align-items: baseline;*/
-  }
-
   .searchBox{
-    display: flex;
-    justify-content: flex-start;
-    margin-right: auto;
-    align-items: baseline;
+    display: none;
   }
 
-  #zipBox{
-    margin-right: auto;
-      align-items: baseline;
+  div#forMobile{
+    display: block;
   }
-  #showOnMobile{
+
+
+    div#forMobile{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+  div#forMobile img{
+    width: auto;
+    height: auto;
+  }
+
+  div#showOnMobile{
     display: block;
     margin-left: 300px;
     width: 600px;

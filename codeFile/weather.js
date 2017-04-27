@@ -1,6 +1,9 @@
 leftImage = 1;
 var offset = 0;
 init();
+//hide the left button;
+ hideLeftButton();
+ // notice();
 
 //track of what is on the screen, sopposed
 
@@ -12,11 +15,6 @@ function init(){
 	var n = steppers.length;
 	for(i = 0; i < n; i++){
 		steppers[i].style.width = rangeWidth / 5 - 10 + "px";
-	}
-
-	if(leftImage == 1){
-		var leftMove = document.getElementById("leftArrow");
-		leftMove.style.display = "none";
 	}
 }
 
@@ -53,12 +51,7 @@ function callbackFunction(data) {
 	//image
 	var weaImgToday = document.getElementById("weaImgToday");
 	matchImages(weaImgToday, weatherText.textContent);
-	// console.log(weaImgToday.src);
-	// console.log(JSON.stringify(weatherText.textContent));
 
-	//for the range forecast
-	//array of 10 forecasts
-	//array of api 10 forcasts
 
 	var apiForecasts = data.query.results.channel.item.forecast;
 
@@ -116,7 +109,7 @@ function matchImages(image, text){
 			break;
 
 		case "Rain":
-		case "*Showers":
+		case "Showers":
 			image.src = "../WeatherApp/rain.png";
 			break;
 
@@ -131,18 +124,20 @@ function matchImages(image, text){
 		case "Mostly Clear":
 			image.src = "https://i.imgur.com/73PXNIj.jpg";
 
-		case "*Thunder*":
+		case "Thunder":
+		case "Thunderstorms":
 			image.src = "../WeatherApp/thunder.png";
 			break;
 
-		case "* Snow":
+		case "Snow":
 			image.src = "../WeatherApp/snow.png";
 			break;
 
-			case "* Wind":
+			case "Wind":
 				image.src = "../WeatherApp/wind.png";
 				break;
 		default:
+			image.src = "no image";
 			break;
 
 	}
@@ -152,12 +147,9 @@ function matchImages(image, text){
 //for left arrows
 function previousForcast(){
 	if(leftImage == 1){
-		var leftMove = document.getElementById("leftArrow");
-		leftMove.style.display = "none";
-	}
-	if(leftImage != 5){
-		var rightMove = document.getElementById("rightArrow");
-		rightMove.style.display = "block";
+		var leftMove = document.getElementsByClassName("leftRight");
+		leftMove[0].style.visibility = "hidden";
+		return;
 	}
 	// console.log("previusForcast" + left);
 	var range = document.getElementById("range");
@@ -170,31 +162,28 @@ function previousForcast(){
 		offset = offset + move;
 
 	for(i = 0; i < n; i ++){
-		// left = left + move;
-		// console.log("previusForcast" + left);
 		steppy[i].style.left = offset +"px";
 	}
 	leftImage--;
+  if(leftImage != 6){
+    var rightMove = document.getElementsByClassName("leftRight");
+    rightMove[1].style.visibility = "visible";
+  }
 }
 
 
 //for right arrows
 function moreForcast(){
-	if(leftImage == 5){
-		var rightMove = document.getElementById("rightArrow");
-		rightMove.style.display = "none";
-	}
 
-	if(leftImage != 1){
-		var leftMove = document.getElementById("leftArrow");
-		leftMove.style.display = "block";
+	if(leftImage == 6){
+		var rightMove = document.getElementsByClassName("leftRight");
+		rightMove[1].style.visibility = "hidden";
+		return;
 	}
 	// console.log("moreForcast" + left);
 	var range2 = document.getElementById("range");
 	var rangeWidth2 = range2.clientWidth;
 
-	// var move = rangeWidth2 * 0.2;
-	// console.log("moreForcast 20%: " + move);
 
 	var steppy2 = document.getElementsByClassName("stepper");
 
@@ -208,4 +197,22 @@ function moreForcast(){
 		steppy2[i].style.left = offset  +"px";
 	}
 	leftImage++;
+  if(leftImage != 1){
+    var leftMove = document.getElementsByClassName("leftRight");
+    leftMove[0].style.visibility = "visible";
+  }
+}
+
+function hideLeftButton(){
+	if(leftImage == 1){
+		var leftMove = document.getElementsByClassName("leftRight");
+		leftMove[0].style.visibility = "hidden";
+		return;
+	}
+
+}
+
+
+function notice(){
+	alert("The right/left arrow button only can click on the images!");
 }

@@ -21,6 +21,12 @@ Also requires files:
 	<!--onresize="init()"-->
 <main>
 	<div class="upperPart">
+
+		<div id="forMobile">
+			<input id="zipbox" type="text" placeholder="enter zip"/>
+			<img src="../WeatherApp/plus.png" alt="no image"/>
+		</div>
+
 		<div id="header">
 			<p><span id="time">time</span>
 			<br/><span id="date">Date</span>
@@ -30,6 +36,7 @@ Also requires files:
 				<br/><button id="summit" onclick="gotNewPlace()">summit</button>
 			</p>
 		</div>
+
 
 		<div id="todayWeather">
 			<img id="weaImgToday" src="../WeatherApp/" alt="can't find photo"/>
@@ -148,8 +155,8 @@ Also requires files:
 </div>
 
 <div id="arrows">
-	<span class="leftRight" id="forLeftGone"><button onclick="previousForcast()" id="leftArrow"> </button>previous forecasts</span>
-		<span class="leftRight" id="forRightGone">more forecasts<button onclick="moreForcast()" id="rightArrow"> </button>
+	<div class="leftRight"> <button onclick="previousForcast()" id="leftArrow"> </button>previous forecasts</div>
+		<div class="leftRight">more forecasts<button onclick="moreForcast()" id="rightArrow"> </button></div>
 </div>
 
 </main>
