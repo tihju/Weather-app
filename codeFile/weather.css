@@ -168,7 +168,11 @@ button#rightArrow{
 img{
   width: auto;
   height: auto;
+  max-width: 200px;
+  max-height: 150px;
 }
+
+
 
 /*for mobile size */
 @media (max-width: 500px){

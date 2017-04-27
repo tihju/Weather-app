@@ -137,7 +137,7 @@ function matchImages(image, text){
 				image.src = "../WeatherApp/wind.png";
 				break;
 		default:
-			image.src = "no image";
+			image.src = "../Happy_face.jpg";
 			break;
 
 	}
