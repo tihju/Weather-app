@@ -14,6 +14,7 @@ Also requires files:
 	<title>Weather App</title>
 	<!-- <link rel="stylesheet" type="text/css" href="reset.css"> -->
 	<link rel="stylesheet" type="text/css" href="weather.css">
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body onresize="init()">
@@ -21,7 +22,7 @@ Also requires files:
 <main>
 	<div class="upperPart">
 		<div id="header">
-			<p>Today <span id="time">time</span>
+			<p><span id="time">time</span>
 			<br/><span id="date">Date</span>
 			</p>
 			<p class="searchBox">
@@ -31,10 +32,10 @@ Also requires files:
 		</div>
 
 		<div id="todayWeather">
-			<img id="weaImgToday" class="resizeImg" src="../WeatherApp/" alt="can't find photo"/>
+			<img id="weaImgToday" src="../WeatherApp/" alt="can't find photo"/>
 			<p id="mainSta"><span id="location">location</span>
-				<br/><span id="tempNow">temperlature</span>
-				<br/><span id="todayText">weather</span>
+				<span id="tempNow">temperlature</span>
+				<span id="todayText">weather</span>
 			</p>
 			<p id="otherSta"><img src="../WeatherApp/drop.png" alt="no imgae"/>
 				<span id="humiNow">humitiry</span>
@@ -48,7 +49,7 @@ Also requires files:
    <div class="stepper">
       <div class="forecast" id="showOnMobile">
          <p><span id="date1">Date</span>
-         <br/><img class="resizeImg" id="forecaseImg1" src="../WeatherApp/" alt="no image1"/>
+         <br/><img id="forecaseImg1" src="../WeatherApp/" alt="no image1"/>
          <br/><span id="text1">Date</span>
 				 <br/><span id="temp1">low high</span>
          </p>
@@ -58,7 +59,7 @@ Also requires files:
 		<div class="stepper">
 			<div class="forecast">
 				 <p><span id="date2">Date</span>
-				 <br/><img class="resizeImg" id="forecaseImg2" src="../WeatherApp/" alt="no image2"/>
+				 <br/><img id="forecaseImg2" src="../WeatherApp/" alt="no image2"/>
 				 <br/><span id="text2">Date</span>
 				 <br/><span id="temp2">low high</span>
 				 </p>
@@ -68,7 +69,7 @@ Also requires files:
 		<div class="stepper">
 			<div class="forecast">
 				 <p><span id="date3">Date</span>
-					<br/><img class="resizeImg" id="forecaseImg3" src="../WeatherApp/" alt="no image3"/>
+					<br/><img id="forecaseImg3" src="../WeatherApp/" alt="no image3"/>
 				 <br/><span id="text3">Date</span>
 				 <br/><span id="temp3">low high</span>
 				 </p>
@@ -78,7 +79,7 @@ Also requires files:
 		<div class="stepper">
 			<div class="forecast">
 				 <p><span id="date4">Date</span>
-					<br/><img class="resizeImg" id="forecaseImg4" src="../WeatherApp/" alt="no image4"/>
+					<br/><img id="forecaseImg4" src="../WeatherApp/" alt="no image4"/>
 				 <br/><span id="text4">Date</span>
 				 <br/><span id="temp4">low high</span>
 				 </p>
@@ -88,7 +89,7 @@ Also requires files:
 		<div class="stepper">
 			<div class="forecast">
 				 <p><span id="date5">Date</span>
-				 <br/><img class="resizeImg" id="forecaseImg5" src="../WeatherApp/" alt="no image5"/>
+				 <br/><img id="forecaseImg5" src="../WeatherApp/" alt="no image5"/>
 				 <br/><span id="text5">Date</span>
 				 <br/><span id="temp5">low high</span>
 				 </p>
@@ -97,10 +98,10 @@ Also requires files:
 
 		<div class="stepper">
 			<div class="forecast">
-				 <p><span id="date6">Date</span></p>
-				 <img class="resizeImg" id="forecaseImg6" src="../WeatherApp/" alt="no image6"/>
-				 <p><span id="text6">Date</span></p>
-				 <p><span id="temp6">low high</span>
+				 <p><span id="date6">Date</span>
+				 <br/><img id="forecaseImg6" src="../WeatherApp/" alt="no image6"/>
+				 <br/><span id="text6">Date</span>
+				 <br/><span id="temp6">low high</span>
 				 </p>
 			</div>
 		</div>
@@ -108,7 +109,7 @@ Also requires files:
 		<div class="stepper">
 			<div class="forecast">
 				 <p><span id="date7">Date</span>
-				 <br/><img class="resizeImg" id="forecaseImg7" src="../WeatherApp/" alt="no image7"/>
+				 <br/><img id="forecaseImg7" src="../WeatherApp/" alt="no image7"/>
 				 <br/><span id="text7">Date</span>
 				 <br/><span id="temp7">low high</span>
 				 </p>
@@ -118,7 +119,7 @@ Also requires files:
 		<div class="stepper">
 			<div class="forecast">
 				 <p><span id="date8">Date</span>
-				 <br/><img class="resizeImg" id="forecaseImg8" src="../WeatherApp/" alt="no image8"/>
+				 <br/><img id="forecaseImg8" src="../WeatherApp/" alt="no image8"/>
 				 <br/><span id="text8">Date</span>
 				 <br/><span id="temp8">low high</span>
 				 </p>
@@ -128,7 +129,7 @@ Also requires files:
 		<div class="stepper">
 			<div class="forecast">
 				 <p><span id="date9">Date</span>
-				 <br/><img class="resizeImg" id="forecaseImg9" src="../WeatherApp/" alt="no image9"/>
+				 <br/><img id="forecaseImg9" src="../WeatherApp/" alt="no image9"/>
 				 <br/><span id="text9">Date</span>
 				 <br/><span id="temp9">low high</span>
 				 </p>
@@ -137,17 +138,18 @@ Also requires files:
 
 		<div class="stepper">
 			<div class="forecast">
-					 <p><span id="date10">Date</span> </p>
-					 <img class="resizeImg" id="forecaseImg10" src="../WeatherApp/" alt="no image10"/>
-					 <p><span id="text10">Date</span></p>
-					 <p><span id="temp10">Date</span></p>
+					 <p><span id="date10">Date</span>
+					 <br/><img id="forecaseImg10" src="../WeatherApp/" alt="no image10"/>
+					 <br/><span id="text10">Date</span>
+					 <br/><span id="temp10">Date</span>
+					 </p>
 			</div>
 		</div>
 </div>
 
 <div id="arrows">
-	<span class="leftRight"><button onclick="previousForcast()" id="leftArrow"> </button>previous forecasts</span>
-		<span class="leftRight">more forecasts<button onclick="moreForcast()" id="rightArrow"> </button>
+	<span class="leftRight" id="forLeftGone"><button onclick="previousForcast()" id="leftArrow"> </button>previous forecasts</span>
+		<span class="leftRight" id="forRightGone">more forecasts<button onclick="moreForcast()" id="rightArrow"> </button>
 </div>
 
 </main>

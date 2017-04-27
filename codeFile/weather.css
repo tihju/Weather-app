@@ -7,6 +7,8 @@ body {
 	justify-content: center;
 	align-items: center;
   background: linear-gradient(#2598CE, #28306A);
+  font-family: 'Lato', sans-serif;
+  color: white;
      }
 
 main {
@@ -22,9 +24,20 @@ main {
 div.upperPart{
   display: flex;
   flex-direction: column;
-  margin-left: 150px;
-  margin-right: 150px;
+  margin-left: 10%;
+  margin-right: 10%;
   margin-top: 20px;
+}
+span#time{
+  font-size: 35px;
+}
+
+#date{
+  font-size: 20px;
+}
+
+#todayWeather img{
+  align: middle;
 }
 
 div#header{
@@ -60,13 +73,25 @@ div#todayWeather{
   justify-content: space-between;
 }
 
+#mainSta{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#location{
+  font-size: 30px;
+}
+
+#tempNow{
+  font-size: 70px;
+}
+
 
 #range {
 	margin: 10px;
 	padding: 10px;
-  border-width: 5px;
-  border-color: grey;
-  border-style: solid;
+  border: none;
   overflow: hidden;   /* let stepper disappear off end */
 	/* flexbox */
 	display: flex;
@@ -75,32 +100,29 @@ div#todayWeather{
 }
 
 .stepper {
-	/*height: 200px;*/
-	/*width: 230px;
   margin-left: 5px;
-  margin-right: 5px;*/
+  margin-right: 5px;
 	/* flexbox */
 	display: flex;
 	position: relative;  /* allow offsets from where flexbox put it */
 	/* horizontal position will be controlled by Javascript */
   flex-shrink: 0;
-  /*justify-content: space-around;*/
-  /*transition-property: left;
-  transition-duration: 1s;*/
+  justify-content: space-around;
+  /*transition-duration: 1s;*/
+  /*border-radius: 10px;*/
 }
 
 .forecast {
-	/*padding-right: 50px;
-  padding-left: 50px;*/
+	/*margin: 10px;*/
 	color: white;
-  /*width: 95%;*/
+  width: 100%;
 	/* flexbox */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
   text-align: center;
-  align-items: center;
   background-color: #2B87BD;
+  border-radius: 20px;
 
 }
 
@@ -108,39 +130,35 @@ div#arrows{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  color: white;
 }
 
 button#rightArrow{
+  background-color: Transparent;
+  border: none;
   background-image: url("../WeatherApp/arrow-right.png");
   width: 40px;
   height: 40px;
   background-size: cover;
-  /*float: right;
-  font-size: 20px;
-  color: white;*/
 }
 
 #leftArrow{
+  background-color: Transparent;
+  border: none;
   background-image: url("../WeatherApp/arrow-left.png");
   width: 40px;
   height: 40px;
   background-size: cover;
-  /*font-size: 20px;
-  color: white;*/
 }
 
 .leftRight{
   text-align: center;
 }
 
-/*img.resizeImg{
-  width: 70px;
-  height: 70px;
-}*/
-
 img{
   width: auto;
   height: auto;
+  /*max-width: 75px;*/
 }
 
 /*for mobile size */
@@ -162,7 +180,28 @@ img{
     display: none;
   }
 
+  div#header{
+    display: flex;
+    flex-direction: column-reverse;
+    /*justify-content: flex-start;
+    align-items: baseline;*/
+  }
+
+  .searchBox{
+    display: flex;
+    justify-content: flex-start;
+    margin-right: auto;
+    align-items: baseline;
+  }
+
+  #zipBox{
+    margin-right: auto;
+      align-items: baseline;
+  }
   #showOnMobile{
     display: block;
+    margin-left: 300px;
+    width: 600px;
+
   }
 }

@@ -1,24 +1,22 @@
-
-var left = 0;
+leftImage = 1;
+var offset = 0;
+init();
 
 //track of what is on the screen, sopposed
-leftImage = 1;
-rightImage = 10;
-init();
+
 
 function init(){
 	var range = document.getElementById("range");
 	var rangeWidth = range.clientWidth;
 	var steppers = document.getElementsByClassName("stepper");
 	var n = steppers.length;
-
-	var totalMargin = rangeWidth - 5 * steppers[0].clientWidth;
-
-	var margin = totalMargin / 4;
 	for(i = 0; i < n; i++){
-		// steppers[i].style.width = rangeWidth / 5 + "px";
-		// console.log(steppers[i].style.width);
-		steppers[i].style.left = margin * i + "px";
+		steppers[i].style.width = rangeWidth / 5 - 10 + "px";
+	}
+
+	if(leftImage == 1){
+		var leftMove = document.getElementById("leftArrow");
+		leftMove.style.display = "none";
 	}
 }
 
@@ -29,7 +27,7 @@ function callbackFunction(data) {
 	var time = document.getElementById("time");
 	//this contain "Mon, 24 Apr 2017  06:00 PM AKDT"
 	var dateTime = JSON.stringify(data.query.results.channel.lastBuildDate);
-	time.textContent = dateTime.substring(18, 26);
+	time.textContent = "Today " + dateTime.substring(18, 26);
 
 	var date = document.getElementById("date");
 	//6-17
@@ -153,6 +151,14 @@ function matchImages(image, text){
 
 //for left arrows
 function previousForcast(){
+	if(leftImage == 1){
+		var leftMove = document.getElementById("leftArrow");
+		leftMove.style.display = "none";
+	}
+	if(leftImage != 5){
+		var rightMove = document.getElementById("rightArrow");
+		rightMove.style.display = "block";
+	}
 	// console.log("previusForcast" + left);
 	var range = document.getElementById("range");
 	var rangeWidth = range.clientWidth;
@@ -160,33 +166,46 @@ function previousForcast(){
 	var steppy = document.getElementsByClassName("stepper");
 	var n = steppy.length;
 	// left = left + move;
+		var move = steppy[0].clientWidth + 11;
+		offset = offset + move;
 
 	for(i = 0; i < n; i ++){
-		left = left + steppy[i].clientWidth;
-		steppy[i].style.left = left +"px";
+		// left = left + move;
+		// console.log("previusForcast" + left);
+		steppy[i].style.left = offset +"px";
 	}
 	leftImage--;
-	rightImage--;
 }
 
 
 //for right arrows
 function moreForcast(){
+	if(leftImage == 5){
+		var rightMove = document.getElementById("rightArrow");
+		rightMove.style.display = "none";
+	}
+
+	if(leftImage != 1){
+		var leftMove = document.getElementById("leftArrow");
+		leftMove.style.display = "block";
+	}
 	// console.log("moreForcast" + left);
 	var range2 = document.getElementById("range");
 	var rangeWidth2 = range2.clientWidth;
+
+	// var move = rangeWidth2 * 0.2;
+	// console.log("moreForcast 20%: " + move);
 
 	var steppy2 = document.getElementsByClassName("stepper");
 
 	var n = steppy2.length;
 
-	for(i = 0; i < n; i ++){
+	var boxWidth = steppy2[0].clientWidth + 11;
+	offset = offset - boxWidth;
 
-		left = left - steppy2[i].clientWidth;
-		//left = left - move;
-		steppy2[i].style.left = left +"px";
+	for(i = 0; i < n; i ++){
+		// var boxWidth = steppy2[0].clientWidth + 10;
+		steppy2[i].style.left = offset  +"px";
 	}
-	// console.log("moreForcast" + left);
 	leftImage++;
-	rightImage++;
 }
